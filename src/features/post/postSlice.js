@@ -7,7 +7,7 @@ const initialState = [
         title: 'Learning Redux Toolkit',
         content: "I've heard good things.",
         date: sub(new Date(), { minutes: 10 }).toISOString(),
-        reactions: {
+        feedback: {
             thumbsUp: 0,
             wow: 0,
             heart: 0,
@@ -20,7 +20,7 @@ const initialState = [
         title: 'Slices...',
         content: "The more I say slice, the more I want pizza.",
         date: sub(new Date(), { minutes: 5 }).toISOString(),
-        reactions: {
+        feedback: {
             thumbsUp: 0,
             wow: 0,
             heart: 0,
@@ -45,9 +45,25 @@ const postSlice = createSlice({
                         title,
                         content,
                         date: new Date().toISOString(),
-                        userId
+                        userId,
+                        feedback: {
+                            thumbsUp: 0,
+                            wow: 0,
+                            heart: 0,
+                            rocket: 0,
+                            coffee: 0
+                        }
                     }
                 }
+            }
+        },
+        feedbackAdded(state, action) {
+            const { postId, feedback } = action.payload;
+
+            const existingPost = state.find(post => post.id === postId);
+
+            if (existingPost) {
+                existingPost.feedback[feedback]++;
             }
         }
     }
@@ -55,6 +71,6 @@ const postSlice = createSlice({
 
 export const selectAllPosts = (state) => state.posts;
 
-export const { postAdded } = postSlice.actions;
+export const { postAdded, feedbackAdded } = postSlice.actions;
 
 export default postSlice.reducer;

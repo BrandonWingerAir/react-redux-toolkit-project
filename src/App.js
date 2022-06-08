@@ -1,11 +1,11 @@
-import PostsList from './features/post/PostsList';
-import AddPostForm from './features/post/AddPostForm';
+import ListPosts from './components/ListPosts';
+import AddPost from './components/AddPost';
 
 function App() {
   return (
     <main className="App">
-      <AddPostForm/>
-      <PostsList/>
+      <AddPost/>
+      <ListPosts/>
     </main>
   );
 }

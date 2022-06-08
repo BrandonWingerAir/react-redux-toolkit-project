@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { postAdded } from './postSlice';
-import { selectAllUsers } from '../user/userSlice';
+import { postAdded } from '../features/post/postSlice';
+import { selectAllUsers } from '../features/user/userSlice';
 
 const AddPostForm = () => {
     const dispatch = useDispatch();

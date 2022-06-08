@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
-import { selectAllPosts } from './postSlice';
-import PostUser from './PostUser';
-import PostDate from './PostDate';
+import { selectAllPosts } from '../features/post/postSlice';
+import PostUser from './post/PostUser';
+import PostDate from './post/PostDate';
+import PostFeedback from './post/PostFeedback';
 
 const PostsList = () => {
   const posts = useSelector(selectAllPosts);
@@ -16,6 +17,7 @@ const PostsList = () => {
               <PostUser userId={post.userId}/>
               <PostDate timestamp={post.date}/>
           </p>
+          <PostFeedback post={post}/>
       </article>
   ));
 
