@@ -6,7 +6,7 @@ import PostDate from './PostDate';
 const PostsList = () => {
   const posts = useSelector(selectAllPosts);
 
-  const orderedPosts = posts.slice().sort((a, b) => b.date.localCompare(a.date));
+  const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date));
 
   const renderedPosts = orderedPosts.map(post => (
       <article key={post.id}>
