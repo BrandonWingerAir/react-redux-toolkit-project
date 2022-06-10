@@ -1,6 +1,6 @@
 import { parseISO, formatDistanceToNow } from "date-fns";
 
-const DatePosted = ({ timestamp }) => {
+const ListDatePosted = ({ timestamp }) => {
     let datePosted = '';
 
     if (timestamp) {
@@ -17,4 +17,4 @@ const DatePosted = ({ timestamp }) => {
     )
 }
 
-export default DatePosted;
+export default ListDatePosted;

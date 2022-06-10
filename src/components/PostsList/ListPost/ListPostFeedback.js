@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { feedbackAdded } from '../../features/post/postSlice';
+import { feedbackAdded } from '../../../features/post/postSlice';
 
 const feedbackSymbols = {
     thumbsUp: '👍',
@@ -9,7 +9,7 @@ const feedbackSymbols = {
     coffee: '☕'
 }
 
-const PostFeedback = ({ post }) => {
+const ListPostFeedback = ({ post }) => {
     const dispatch = useDispatch();
 
     const feedbackBtns = Object.entries(feedbackSymbols).map(([name, symbol]) => {
@@ -30,4 +30,4 @@ const PostFeedback = ({ post }) => {
     return <div>{feedbackBtns}</div>;
 }
 
-export default PostFeedback;
+export default ListPostFeedback;
