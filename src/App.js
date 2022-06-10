@@ -1,10 +1,10 @@
 import PostsList from './components/PostsList/PostsList';
-import AddPost from './components/AddPost';
+import PostNew from './components/PostNew';
 
 function App() {
   return (
     <main className="App">
-      <AddPost/>
+      <PostNew/>
       <PostsList/>
     </main>
   );
